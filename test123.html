@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function MyFunction(){
+			var getValue = document.getElementById("language");
+			//console.log(getValue);
+			var getIndexValue = getValue.options[getValue.selectedIndex].value;
+			//console.log(getValue.selectedIndex);
+			//console.log(getIndexValue);
+
+			if(getValue.selectedIndex == 1){
+				//console.log("English")
+				location.href = "http://www.google.com";
+			}
+			else if(getValue.selectedIndex == 2){
+				//console.log("Marathi");
+				location.href = "http://www.yahoo.com";
+			}
+			else{
+				console.log("Wrong Option Selected.");
+			}
+		}
+	</script>
+</head>
+<body>
+Language:
+<select name="language" id="language">
+	<option>Select..</option>
+	<option value="https://www.google.com" id="english">English</option>
+	<option value="https://www.yahoo.com" id="marathi">Marathi</option>
+</select>
+<br>
+<button name="submit" id="submit" onclick="MyFunction()">Submit</button>
+</body>
+</html>
