@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page1</title>
+	<script type="text/javascript">
+		//var complexdata = {"centerID":"12","centerName":"Sudama"}
+		var complexdata = {"CenterID":"12","CenterName":"Sudama","PhoneNo":"85485787","UserName":"Jay","UserPassword":"Jay","FullAddress":"mathura","Result":"Login successful"}
+		console.log(JSON.stringify(complexdata));
+		sessionStorage.setItem("list_data_key",JSON.stringify(complexdata));
+
+		var storedData = sessionStorage.getItem("list_data_key");
+		if(storedData){
+		complexdata = JSON.parse(storedData);
+		 }
+		console.log(complexdata.CenterID);
+		console.log(complexdata.CenterName);
+
+		function myFunction(){
+			window.open("page2.html");
+		}
+		//console.log(complexdata[0]);
+		//console.log(complexdata[1]);
+	</script>
+	<script type="text/javascript">
+		// sessionStorage.setItem("centerID","12");
+		// //sessionStorage.setItem("centerName","Sudama")
+		// var fcenterID = sessionStorage.getItem("centerID");
+		// //var fcenterName = sessionStorage.getItem("centerName");
+
+		// console.log(fcenterID);
+		// //console.log(centerName);
+
+		// function myFunction(){
+		// 	window.open("page2.html");
+		// }
+	</script>
+</head>
+<body>
+This is Page 1
+
+</br>
+<button onclick="myFunction()">SendThis</button>
+</body>
+</html>

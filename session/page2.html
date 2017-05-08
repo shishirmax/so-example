@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 2</title>
+</head>
+<body>
+This is Page 2</br>
+<input type="text" name="txtCenterID" id="txtCenterID" value="">
+<input type="text" name="txtCenterName" id="txtCenterName" value="">
+<script type="text/javascript">
+	var storedData = sessionStorage.getItem("list_data_key");
+		if(storedData){
+		complexdata = JSON.parse(storedData);
+		 }
+		 var fCenterID = complexdata.CenterID;
+		 var fCenterName = complexdata.CenterName
+
+		document.getElementById("txtCenterID").value = fCenterID;
+		document.getElementById("txtCenterName").value = fCenterName;
+				 
+		console.log(complexdata.CenterID);
+		console.log(complexdata.CenterName);
+</script>
+<script type="text/javascript">
+		// var fcenterID = sessionStorage.getItem("centerID");
+		// console.log(fcenterID);
+
+		// document.getElementById("txtName").value = fcenterID;
+	</script>
+</body>
+</html>
