@@ -1,0 +1,35 @@
+<htm>
+  <head>
+    <title>Clipboard JS</title>
+  </head>
+  <body>
+    <div>
+      <!-- Target -->
+      <input id="data">
+      <!-- Trigger -->
+      <button class="btn" data-clipboard-target="#data" tooltip="Copied!">Copy Text</button>
+    </div>
+    <br>
+    <div>
+      <!-- Target 2-->
+      <input id="data2">
+      <!-- Triger 2 for cut-->
+      <button class="btn" data-clipboard-action="cut" data-clipboard-target="#data2">Cut to Clipboard</button>
+    </div>
+    <!-- <script src="clipboard.js-master/dist/clipboard.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script>
+    var clipboard = new Clipboard('.btn');
+    clipboard.on('success',function(e){
+      console.log(e);
+      console.info('Action:',e.action);
+      console.info('Text:',e.text);
+      console.info('Trigger:',e.trigger);
+      console.info('ClearSelection:',e.clearSelection);
+    });
+    clipboard.on('error',function(e){
+      console.log(e);
+    });
+    </script>
+  </body>
+</html>
