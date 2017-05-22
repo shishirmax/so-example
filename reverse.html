@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>reverse</title>
+</head>
+<body>
+<div>
+  <input type="text" id="inputText" style="text-transform: uppercase">
+  <button id="btn" onclick="reverseString()">Go</button>
+  <button id='clr' onclick="cleanAll()">Clear</button>
+</br>
+</div>
+<p>Output: <span id="outputText"></span></p>
+  <script>
+  function reverseString(){
+    var str = document.getElementById('inputText').value;
+    console.log(str);
+    var arr = str.split('');
+    console.log(arr);
+    var x = "";
+    console.log(x);
+    arr.push(x);
+    arr.unshift(x);
+    arr.reverse();
+    str = arr.join('').toUpperCase();
+    console.log(str);
+    document.getElementById('outputText').innerHTML = str;
+
+  }
+function cleanAll(){
+  document.getElementById('inputText').value = '';
+  document.getElementById('outputText').innerHTML = '';
+}
+  </script>
+</body>
+</html>
