@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>CSV Read</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      $("#upload").bind("click",function(){
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+        if(regex.test($("#fileUpload").val().toLowerCase())){
+          if(typeof(FileReader) != "undefined"){
+            var reader = new FileReader();
+            reader.onload = function(e){
+              var table = $("<table>");
+              var rows = e.target.result.split("\n");
+              console.log(rows);
+              for(var i=0;i<rows.length;i++){
+                var row = $("<tr>");
+                var cells = rows[i].split(",");
+                for(var j=0;j<cells.length;j++){
+                  var cell = $("<td>");
+                  cell.html(cells[j]);
+                  row.append(cell);
+                }
+                table.append(row);
+              }
+              $("#dvCSV").html('');
+              $("#dvCSV").append(table);
+            }
+            reader.readAsText($("#fileUpload")[0].files[0]);
+          }else{
+            alert("This browser does not support HTML5.");
+          }
+        }else{
+          alert("please upload a valid CSV file.");
+        }
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <input type="file" id="fileUpload">
+    <input type="button" id="upload" value="Upload">
+    <br>
+    <div id="dvCSV"></div>
+  </body>
+</html>
