@@ -6,6 +6,7 @@
     $(function(){
       $("#upload").bind("click",function(){
         var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+        // var regex = /^(/(".*"?"|[^",\s]+)(?=\s*,|\s*$)/g)+(.csv|.txt)$/;
         if(regex.test($("#fileUpload").val().toLowerCase())){
           if(typeof(FileReader) != "undefined"){
             var reader = new FileReader();
@@ -25,6 +26,7 @@
               }
               $("#dvCSV").html('');
               $("#dvCSV").append(table);
+              $('table').attr('border','1');
             }
             reader.readAsText($("#fileUpload")[0].files[0]);
           }else{
