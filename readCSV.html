@@ -19,6 +19,7 @@
                 var cells = rows[i].split(",");
                 for(var j=0;j<cells.length;j++){
                   var cell = $("<td>");
+                  console.log(cells);
                   cell.html(cells[j]);
                   row.append(cell);
                 }
