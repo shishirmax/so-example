@@ -23,3 +23,35 @@ var yoo = function(str1){
 
 var belo = yoo('Hey Ya Boy,');
 belo('How are you!!');
+
+
+//closure - closure is a stateful function.
+/*
+global variable: not self contained, error prone, maintenance issue
+closures: isolated stateful function(closure is function inside function)
+closures: helps to implement OOP in JavaScript programming.
+*/
+function counter(){
+  var counter = 0;
+  //this function is enclosed inside other function
+  var increment = function(){
+    counter++;
+    alert(counter);
+  }
+  return{
+    increment
+  }
+}
+var x = counter();
+x.increment();
+x.increment();
+
+var x1 = counter();
+x1.increment();
+/*
+principles of OOP
+abstraction: show what is necessary
+encapsulation: hide complexity
+inheritance: parent child
+polymorphism: depending on situation diff behaviour
+*/
