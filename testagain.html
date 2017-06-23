@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Select Language</title>
+    <meta charset="utf-8">
+        <link rel="icon" href="hen.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+        <script type="text/javascript">
+        	// var url = document.getElementById('English').value;
+        	// window.location.href = url;
+
+        	// function OptionSelect(){
+        	// 	var s1 = document.getElementById("Language");
+        	// 	var s2 = s1.options[s1.selectedIndex].value;
+        	// 	//console.log(s1.selectedIndex);
+        	// 	console.log(s2);
+        	// 	if(s1.selectedIndex == 1){
+        	// 		console.log("English");
+        	// 		//console.log(s2);
+        	// 		window.location.href = s2;
+        	// 	}
+        	// 	else if(s1.selectedIndex == 2){
+        	// 		console.log("Marathi");
+        	// 		//console.log(s2);
+        	// 		window.location.href = s2;
+        	// 	}
+        	// 	else{
+        	// 		alert("Option Wrong");
+        	// 	}
+        	// }
+
+        	function OptionSelect(){
+        		//window.location.href = document.getElementById("Language").value;
+        		//var s1 = document.getElementById("Language");
+        		//var s2 = s1.options[s1.selectedIndex].value;
+        		//console.log(s2);
+        		console.log("clicked");
+        		window.location = "https://www.google.com"
+        	}
+        </script>
+</head>
+<form>
+<center>
+    <p id="p1">
+    Language:<select id="Language">
+    		<option>Select</option>
+            <option id="English" value="www.google.com">English</option>
+            <option id="Marathi" value="www.yahoo.com">Marathi</option>
+            </select>
+    </p>
+        <input type="submit" id="button" value="Open" onclick="OptionSelect()" >
+</center>
+</form>
+</html>
