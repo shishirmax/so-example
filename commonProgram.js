@@ -30,6 +30,8 @@ belo('How are you!!');
 global variable: not self contained, error prone, maintenance issue
 closures: isolated stateful function(closure is function inside function)
 closures: helps to implement OOP in JavaScript programming.
+A closure is the combination of a function and the lexical environment which that function
+was declared.
 */
 function counter(){
   var counter = 0;
