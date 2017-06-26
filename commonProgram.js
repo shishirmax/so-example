@@ -57,3 +57,5 @@ encapsulation: hide complexity
 inheritance: parent child
 polymorphism: depending on situation diff behaviour
 */
+
+//prototype:to share properties among objects
